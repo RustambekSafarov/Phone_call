@@ -15,9 +15,91 @@ class _PhoneNumberState extends State<PhoneNumber> {
   int y = 1;
 
   String x = '';
-  void press() {
+  void two() {
     setState(() {
-      x += '$y';
+      x += '2';
+    });
+  }
+
+  void six() {
+    setState(() {
+      x += '6';
+    });
+  }
+
+  void five() {
+    setState(() {
+      x += '5';
+    });
+  }
+
+  void four() {
+    setState(() {
+      x += '4';
+    });
+  }
+
+  void three() {
+    setState(() {
+      x += '3';
+    });
+  }
+
+  void one() {
+    setState(() {
+      x += '1';
+    });
+  }
+
+  void seven() {
+    setState(() {
+      x += '7';
+    });
+  }
+
+  void eight() {
+    setState(() {
+      x += '8';
+    });
+  }
+
+  void nine() {
+    setState(() {
+      x += '9';
+    });
+  }
+
+  void star() {
+    setState(() {
+      x += '*';
+    });
+  }
+
+  void zero() {
+    setState(() {
+      x += '0';
+    });
+  }
+
+  void cell() {
+    setState(() {
+      x += '#';
+    });
+  }
+
+  void plus() {
+    setState(() {
+      x += '+';
+    });
+  }
+  void nul() {
+    setState(() {
+      x = '';
+    });
+  }
+  void back() {
+    setState(() {
+      x = x.substring(0, x.length - 1);
     });
   }
 
@@ -34,14 +116,21 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 height: 80,
               ),
               Container(
-                child: Text('$x'),
-                color: Colors.red,
+                child: Text(
+                  '$x',
+                  maxLines: 1,
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                ),
+                color: Colors.black,
+              ),
+              SizedBox(
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: press,
+                    onPressed: one,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -64,7 +153,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: two,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -87,7 +176,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: three,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -115,7 +204,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: four,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -138,7 +227,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: five,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -161,7 +250,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: six,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -189,7 +278,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: seven,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -212,7 +301,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: eight,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -235,7 +324,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: nine,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -263,7 +352,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: star,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -286,7 +375,8 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: zero,
+                    onLongPress: plus,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -309,7 +399,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: cell,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -332,7 +422,9 @@ class _PhoneNumberState extends State<PhoneNumber> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(width: 90,),
+                  SizedBox(
+                    width: 90,
+                  ),
                   ElevatedButton(
                     onPressed: () {},
                     child: Icon(Icons.local_phone_outlined),
@@ -341,9 +433,12 @@ class _PhoneNumberState extends State<PhoneNumber> {
                         backgroundColor: Colors.green,
                         fixedSize: Size(70, 70)),
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(
+                    width: 20,
+                  ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: back,
+                    onLongPress: nul,
                     child: Icon(Icons.backspace),
                     style: ElevatedButton.styleFrom(
                         shape: CircleBorder(),
