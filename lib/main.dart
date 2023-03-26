@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(PhoneNumber());
 }
 
 class PhoneNumber extends StatefulWidget {
-  const PhoneNumber({super.key});
+  String x;
+  PhoneNumber({super.key, this.x = ''});
 
   @override
   State<PhoneNumber> createState() => _PhoneNumberState();
@@ -14,97 +16,105 @@ class PhoneNumber extends StatefulWidget {
 class _PhoneNumberState extends State<PhoneNumber> {
   int y = 1;
 
-  String x = '';
   void two() {
     setState(() {
-      x += '2';
+      widget.x += '2';
     });
   }
 
   void six() {
     setState(() {
-      x += '6';
+      widget.x += '6';
     });
   }
 
   void five() {
     setState(() {
-      x += '5';
+      widget.x += '5';
     });
   }
 
   void four() {
     setState(() {
-      x += '4';
+      widget.x += '4';
     });
   }
 
   void three() {
     setState(() {
-      x += '3';
+      widget.x += '3';
     });
   }
 
   void one() {
     setState(() {
-      x += '1';
+      widget.x += '1';
     });
   }
 
   void seven() {
     setState(() {
-      x += '7';
+      widget.x += '7';
     });
   }
 
   void eight() {
     setState(() {
-      x += '8';
+      widget.x += '8';
     });
   }
 
   void nine() {
     setState(() {
-      x += '9';
+      widget.x += '9';
     });
   }
 
   void star() {
     setState(() {
-      x += '*';
+      widget.x += '*';
     });
   }
 
   void zero() {
     setState(() {
-      x += '0';
+      widget.x += '0';
     });
   }
 
   void cell() {
     setState(() {
-      x += '#';
+      widget.x += '#';
     });
   }
 
   void plus() {
     setState(() {
-      x += '+';
+      widget.x += '+';
     });
   }
+
   void nul() {
     setState(() {
-      x = '';
+      widget.x = '';
     });
   }
+
   void back() {
     setState(() {
-      x = x.substring(0, x.length - 1);
+      widget.x = widget.x.substring(0, widget.x.length - 1);
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final Uri _url = Uri.parse('tel:${widget.x}');
+    Future<void> _launchUrl() async {
+      if (!await launchUrl(_url)) {
+        throw Exception('Could not launch $_url');
+      }
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -117,7 +127,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
               ),
               Container(
                 child: Text(
-                  '$x',
+                  '${widget.x}',
                   maxLines: 1,
                   style: TextStyle(color: Colors.white, fontSize: 40),
                 ),
