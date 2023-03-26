@@ -436,7 +436,9 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     width: 90,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _launchUrl();
+                    },
                     child: Icon(Icons.local_phone_outlined),
                     style: ElevatedButton.styleFrom(
                         shape: CircleBorder(),
