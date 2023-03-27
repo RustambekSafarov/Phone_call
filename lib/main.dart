@@ -446,16 +446,18 @@ class _PhoneNumberState extends State<PhoneNumber> {
                         fixedSize: Size(70, 70)),
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 40,
                   ),
-                  ElevatedButton(
-                    onPressed: back,
+                  InkWell(
+                    onTap: back,
                     onLongPress: nul,
-                    child: Icon(Icons.backspace),
-                    style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        backgroundColor: Color.fromARGB(137, 73, 73, 73),
-                        fixedSize: Size(70, 70)),
+                    child: Icon(
+                      Icons.backspace,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 25,
                   ),
                 ],
               ),
